@@ -1,363 +1,232 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>imissyouu</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for my agum 💗</title>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body {
-
-  margin: 0;
-
-  background: black;
-
-  font-family: Arial, sans-serif;
-
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(135deg,#f5e0ee,#d5aecb);
 }
-
 
 /* CENTER */
-
 .center {
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  height: 100vh;
-
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
 
-
-/* CARD */
-
-.card {
-
-  position: relative;
-
-  width: 340px;
-
-  height: 230px;
-
-  background: #fff8e7;
-
-  border-radius: 15px;
-
-  overflow: hidden;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-
+/* PAGE 1 */
+.box {
+  background:white;
+  padding:2.5rem;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  width:90%;
+  max-width:350px;
 }
 
-
-/* CONTENT UNDER SCRATCH */
-
-.content {
-
-  position: absolute;
-
-  width: 100%;
-
-  height: 100%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
+/* GIF */
+img {
+  width:160px;
+  border-radius:12px;
+  transition:transform 0.3s ease;
 }
 
-
-/* CANVAS */
-
-canvas {
-
-  position: absolute;
-
-  top: 0;
-
-  left: 0;
-
+/* bounce */
+@keyframes bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.15); }
+  60% { transform: scale(0.95); }
+  100% { transform: scale(1); }
 }
 
+.bounce {
+  animation: bounce 0.4s;
+}
 
-/* BUTTON */
+.title {
+  font-size:1.8rem;
+  color:hotpink;
+  margin:1rem 0;
+}
 
 button {
-
-  margin: 8px;
-
-  padding: 8px 18px;
-
-  border-radius: 10px;
-
-  border: none;
-
-  cursor: pointer;
-
+  padding:0.9rem 1.5rem;
+  margin:0.4rem;
+  border:none;
+  border-radius:18px;
+  cursor:pointer;
+  transition:0.2s;
+  font-size:1rem;
 }
 
+.yes { background:green; color:white; }
+.no { background:crimson; color:white; }
 
-/* LETTER PAGE */
-
+/* LETTER */
 .letter {
-
-  background: #fff8e7;
-
-  padding: 30px;
-
-  border-radius: 15px;
-
-  max-width: 500px;
-
+  max-width:600px;
+  background:white;
+  padding:1.5rem;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.15);
 }
 
-
-.cursive {
-
-  font-family: "Brush Script MT", cursive;
-
-  color: gold;
-
+/* VIDEO */
+iframe {
+  width:100%;
+  height:220px;
+  border-radius:12px;
+  margin-bottom:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* blinking cursor */
+#letterText::after {
+  content:"|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity:0; }
+}
 </style>
-
 </head>
-
 
 <body>
 
+<!-- PAGE 1 -->
+<div id="page1" class="center">
+  <div class="box">
 
-<!-- SCRATCH PAGE -->
+    <img id="mainGif" src="https://media.tenor.com/TUVAE2M_wz4AAAAi/chubby-tonton.gif">
 
-<div id="scratchPage" class="center">
+    <p class="title">hi theaa, would yoy like to open this?</p>
 
-  <div class="card">
-
-
-    <div class="content">
-
-      <h3>Would you like to open your present?</h3>
-
-      <button onclick="yes()">Yes</button>
-
-      <button onclick="no()">No</button>
-
-      <p id="response"></p>
-
-    </div>
-
-
-    <canvas id="scratchCanvas"></canvas>
-
+    <button class="yes" onclick="goLetter()">Yes</button>
+    <button class="no" id="noBtn">No</button>
 
   </div>
-
 </div>
 
-
-<!-- LETTER PAGE -->
-
-<div id="page3" class="center" style="display:none;">
-
+<!-- PAGE 2 -->
+<div id="page2" class="center" style="display:none;">
   <div class="letter">
 
-    <h1 class="cursive">for my gorgeous agum,</h1>
+    <!-- 🎥 VIDEO -->
+    <iframe
+      src="https://drive.google.com/file/d/1rv9Vcy7_mO2iamia1BtghLgoa-wD2orH/preview"
+      allow="autoplay">
+    </iframe>
 
+    <h1 style="font-family:cursive;">for my gorgeous agum,</h1>
 
-    <p style="text-align:left;">
-
-halleerr, my beautiful althea. i know na u know na i really really miss u andddd sadly i cant give u letter so i come up with this idea para mareach ng love ko ikaw. and although hindi to hand written sana maappreciate mo parin kasi i stayed up all night for this kaya iiyak talaga ako pag hindi.
-
-      <br><br>
-      
-so ayunnnn, i just wanna thank u for existing kasi ang light na ng pakiramdam lahat bcs of ur existence itself. u motivated me and i can say na i am better now bcs of u so i wanna thank u for that. kasi u made me feel im seen, appreciated and love.
-
-      <br><br>
-      
-minsan nagtataka nalang ako everytime na nagsosorry ikaw kapag wala kang masabi everytime na nag kkwento ako. kasi the fact na ure listening is alrd enough for me. ive never experienced that na someone's willing to waste their timr just to listen to me.
-
-      <br><br>
-      
-and gusto ko lang malaman mue na andito ako palagi for u, i still love u and ill keep on loving u, i hope u know thaaaaattttt. im still here, loving and waiting for u til ma-win ko po heart mo hehe.
-
-      <br><br>
-      
-I also want to remind you that you’re special, valuable, beloved, and very dear to me. I won’t make this too long because words aren’t enough to express everything and ang haba na, baka tamarin ka basahin HAHAHAHA
-      
-    </p>
+    <!-- ✍️ TYPING LETTER -->
+    <p id="letterText" style="text-align:left; line-height:1.6;"></p>
 
   </div>
-
 </div>
-
 
 <script>
 
-const canvas = document.getElementById("scratchCanvas");
+/* NAV */
+function goLetter(){
+  document.getElementById("page1").style.display="none";
+  document.getElementById("page2").style.display="flex";
 
-const ctx = canvas.getContext("2d");
-
-
-canvas.width = 340;
-
-canvas.height = 230;
-
-
-/* RED COVER */
-
-ctx.fillStyle = "#b30000";
-
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-
-/* ERASE MODE */
-
-ctx.globalCompositeOperation = "destination-out";
-
-
-let isDrawing = false;
-
-
-/* START */
-
-canvas.addEventListener("mousedown", start);
-
-canvas.addEventListener("touchstart", start);
-
-
-canvas.addEventListener("mouseup", stop);
-
-canvas.addEventListener("mouseleave", stop);
-
-canvas.addEventListener("touchend", stop);
-
-
-function start(e) {
-
-  isDrawing = true;
-
-  draw(e);
-
+  setTimeout(typeLetter, 500);
 }
 
+/* 💗 TYPING ANIMATION (LETTER ONLY) */
+const fullText = `
+halleerr my beautiful thea.
 
-function stop() {
+this is for you. i made this with love.
 
-  isDrawing = false;
+I dedicate this song just for u.
+ 
+I hope you know how much you mean to me.
+  
+Thank you for being there when i have nobody,
+  
+thank you for being my strength.
+  
+I promise you na i wont hurt you and ill choose u forever without any pause.
 
-  ctx.beginPath();
+God knows how much im thankful that i met you, he knows because i always whisper your name to him.
 
-}
+  thank you althea alarcio cariño na muse ng mapeh na dating aguinaldo, mahal kita at palagi kitang mamahalin.
+`
 
+let i = 0;
 
-/* DRAW SCRATCH */
+function typeLetter() {
+  const el = document.getElementById("letterText");
 
-function draw(e) {
-
-  if (!isDrawing) return;
-
-
-  const rect = canvas.getBoundingClientRect();
-
-  const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-
-  const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
-
-
-  ctx.lineWidth = 35;
-
-  ctx.lineCap = "round";
-
-  ctx.lineJoin = "round";
-
-
-  ctx.lineTo(x, y);
-
-  ctx.stroke();
-
-
-  ctx.beginPath();
-
-  ctx.moveTo(x, y);
-
-
-  checkScratch();
-
-}
-
-
-canvas.addEventListener("mousemove", draw);
-
-canvas.addEventListener("touchmove", draw);
-
-
-/* ENABLE BUTTONS AFTER SCRATCH */
-
-function checkScratch() {
-
-  const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-  let transparent = 0;
-
-
-  for (let i = 3; i < pixels.data.length; i += 4) {
-
-    if (pixels.data[i] === 0) transparent++;
-
+  if (i < fullText.length) {
+    el.innerHTML += fullText.charAt(i);
+    i++;
+    setTimeout(typeLetter, 25);
   }
+}
 
+/* 💔 NO BUTTON + GIF + BOUNCE */
+const noBtn = document.getElementById("noBtn");
+const mainGif = document.getElementById("mainGif");
 
-  const percent = transparent / (canvas.width * canvas.height);
+const gifs = [
+  "https://media.tenor.com/TUVAE2M_wz4AAAAi/chubby-tonton.gif",
+  "https://media.tenor.com/pZk_U5JVWzUAAAAi/tonton-friends-tonton.gif",
+  "https://media.tenor.com/Jkha__Yjf0oAAAAi/sad-depression.gif",
+  "https://media.tenor.com/U0OPHZokzkUAAAAi/what-seriously.gif",
+  "https://media.tenor.com/WKXMmSk3JJsAAAAi/chubby-tonton.gif"
+];
 
+let count = 0;
 
-  if (percent > 0.35) {
+noBtn.addEventListener("click", () => {
+  count++;
 
-    canvas.style.pointerEvents = "none";
+  mainGif.src = gifs[Math.min(count, gifs.length - 1)];
 
+  // bounce effect
+  mainGif.classList.remove("bounce");
+  void mainGif.offsetWidth;
+  mainGif.classList.add("bounce");
+
+  const messages = [
+    "No",
+    "are you shore?",
+    "open na plsplspls",
+    "pls agummmmm",
+    "open naaa, iiyak ako sige"
+  ];
+
+  noBtn.innerText = messages[Math.min(count, messages.length - 1)];
+
+  const yesBtn = document.querySelector(".yes");
+  yesBtn.style.transform = `scale(${1 + count * 0.12})`;
+  noBtn.style.transform = `scale(${1 - count * 0.07})`;
+
+  if(count >= gifs.length - 1){
+    noBtn.disabled = true;
   }
-
-}
-
-
-/* BUTTONS */
-
-function yes() {
-
-  document.getElementById("scratchPage").style.display = "none";
-
-  document.getElementById("page3").style.display = "flex";
-
-}
-
-
-function no() {
-
-  document.getElementById("response").innerText = "are you suree? you'd like this i swearrr";
-
-  setTimeout(() => {
-
-    document.getElementById("response").innerText = "";
-
-  }, 1500);
-
-}
+});
 
 </script>
 
-
 </body>
-
 </html>
